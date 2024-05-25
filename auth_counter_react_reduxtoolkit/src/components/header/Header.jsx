@@ -1,9 +1,13 @@
-import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
-import classes from './Header.module.css';
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../store';
+import { useSelector } from "react-redux";
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import classes from './Header.module.css';
+
 
 const Header = () => {
+
+    const { isAuthenticated } = useSelector((store) => store.authen);
 
     const dispatch = useDispatch();
 
@@ -14,26 +18,57 @@ const Header = () => {
 
     return (
         <header className={classes.header}>
-            <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
-            <nav>
-                <ul>
-                    <li>
-                        <NavLink to="/products">My Products</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/sales">My Sales</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/userprofile"> User </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/auth">
-                            <button onClick={handlerOnLogOut}>Logout</button>
-                        </NavLink>
 
-                    </li>
-                </ul>
-            </nav>
+            {!isAuthenticated && <>
+
+                <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
+                <NavLink to="/auth">
+                    <button> Login </button>
+                </NavLink>
+            </>}
+
+            {isAuthenticated && <>
+                <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
+                <NavLink to="/products">My Products</NavLink>
+                <NavLink to="/sales">My Sales</NavLink>
+                <NavLink to="/userprofile"> User </NavLink>
+                <NavLink to="/auth">
+                    <button onClick={handlerOnLogOut}> Logout </button>
+                </NavLink>
+
+                {/* <nav>
+                    <ul>
+                        <li>
+                            <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/products">My Products</NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/sales">My Sales</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/userprofile"> User </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/auth">
+                                <button onClick={handlerOnLogOut}> Logout </button>
+                            </NavLink>
+                        </li>
+                    </ul>
+                </nav> */}
+
+            </>}
+
+
+
+
+
+
+
         </header>
     );
 };

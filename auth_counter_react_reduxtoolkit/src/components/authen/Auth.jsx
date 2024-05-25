@@ -1,8 +1,11 @@
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 import classes from './Auth.module.css';
 import { authActions } from '../../store';
 
 const Auth = () => {
+
+    const myHistory = useHistory();
 
     const dispatch = useDispatch();
 
@@ -10,6 +13,7 @@ const Auth = () => {
         event.preventDefault();
         console.log("Hi Hello login now");
         dispatch(authActions.logIn());
+        myHistory.replace("/header");
     };
 
     return (
