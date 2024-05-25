@@ -1,23 +1,7 @@
+import authSlice from "./auth";
 import counterSlice from "./CounterSlice";
 import togglerSlice from "./TogglerSlice";
-import { configureStore, createSlice } from "@reduxjs/toolkit";
-
-const INITIAL_VALUE = {
-  isAuthenticated: false,
-};
-
-const authSlice = createSlice({
-  name: "Authentication",
-  initialState: INITIAL_VALUE,
-  reducers: {
-    logIn: (currState, action) => {
-      currState.isAuthenticated = true;
-    },
-    logOut: (currState, action) => {
-      currState.isAuthenticated = false;
-    },
-  },
-});
+import { configureStore } from "@reduxjs/toolkit";
 
 const counterConfigStore = configureStore({
   reducer: {
@@ -26,7 +10,5 @@ const counterConfigStore = configureStore({
     authen: authSlice.reducer,
   },
 });
-
-export const authActions = authSlice.actions;
 
 export default counterConfigStore;

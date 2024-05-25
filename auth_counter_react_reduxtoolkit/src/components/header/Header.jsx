@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { authActions } from '../../store';
+import { authActions } from '../../store/auth';
 import { useSelector } from "react-redux";
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import classes from './Header.module.css';
