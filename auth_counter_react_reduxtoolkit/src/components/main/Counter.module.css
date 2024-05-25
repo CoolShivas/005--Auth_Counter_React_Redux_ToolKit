@@ -26,3 +26,11 @@
   margin: 2rem 0;
   font-weight: bold;
 }
+
+.increase_decrease__btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
