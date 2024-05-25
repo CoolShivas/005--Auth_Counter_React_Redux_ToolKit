@@ -4,7 +4,7 @@ import classes from './Header.module.css';
 const Header = () => {
     return (
         <header className={classes.header}>
-            <h1>Redux Auth</h1>
+            <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
             <nav>
                 <ul>
                     <li>
@@ -17,9 +17,10 @@ const Header = () => {
                         <NavLink to="/userprofile"> User </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/dashboard">
+                        <NavLink to="/auth">
                             <button>Logout</button>
                         </NavLink>
+
                     </li>
                 </ul>
             </nav>
