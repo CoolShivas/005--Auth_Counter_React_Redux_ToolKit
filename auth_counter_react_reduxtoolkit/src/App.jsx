@@ -26,7 +26,8 @@ const App = () => {
                 <Route path="/dashboard"> <DashBoard></DashBoard> </Route>
             </>}
 
-            <Auth></Auth>
+            {!isAuthenticated && <Auth></Auth>}
+
             <Counter></Counter>
 
 
