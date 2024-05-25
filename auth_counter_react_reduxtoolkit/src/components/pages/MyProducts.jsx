@@ -1,8 +1,10 @@
-
+import classes from "./MyProducts.module.css";
 
 const MyProducts = () => {
     return (
-        <h1> MyProducts </h1>
+        <div className={classes.products}>
+            <h1> MyProducts </h1>
+        </div>
     )
 }
 
