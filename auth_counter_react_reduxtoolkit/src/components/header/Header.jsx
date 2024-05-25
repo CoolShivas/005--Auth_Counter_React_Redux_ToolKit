@@ -1,7 +1,17 @@
 import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import classes from './Header.module.css';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store';
 
 const Header = () => {
+
+    const dispatch = useDispatch();
+
+    const handlerOnLogOut = () => {
+        console.log("Bye Bye logout now");
+        dispatch(authActions.logOut());
+    };
+
     return (
         <header className={classes.header}>
             <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
@@ -18,7 +28,7 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink to="/auth">
-                            <button>Logout</button>
+                            <button onClick={handlerOnLogOut}>Logout</button>
                         </NavLink>
 
                     </li>
