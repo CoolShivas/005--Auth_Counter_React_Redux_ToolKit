@@ -1,4 +1,14 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice, current } from "@reduxjs/toolkit";
+
+const togglerSlice = createSlice({
+  name: "toggling",
+  initialState: false,
+  reducers: {
+    toggulous: (currState, action) => {
+      return (currState = !currState);
+    },
+  },
+});
 
 const counterSlice = createSlice({
   name: "counter",
@@ -16,9 +26,11 @@ const counterSlice = createSlice({
 const counterConfigStore = configureStore({
   reducer: {
     counterNumber: counterSlice.reducer,
+    hide: togglerSlice.reducer,
   },
 });
 
 export const counterActions = counterSlice.actions;
+export const togglerActions = togglerSlice.actions;
 
 export default counterConfigStore;
