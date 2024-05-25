@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 import classes from './Header.module.css';
 
 const Header = () => {
@@ -7,13 +8,18 @@ const Header = () => {
             <nav>
                 <ul>
                     <li>
-                        <a href="/products">My Products</a>
+                        <NavLink to="/products">My Products</NavLink>
                     </li>
                     <li>
-                        <a href="/sales">My Sales</a>
+                        <NavLink to="/sales">My Sales</NavLink>
                     </li>
                     <li>
-                        <button>Logout</button>
+                        <NavLink to="/userprofile"> User </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/dashboard">
+                            <button>Logout</button>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

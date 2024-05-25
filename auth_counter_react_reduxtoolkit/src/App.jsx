@@ -1,3 +1,4 @@
+import DashBoard from "./components/pages/DashBoard";
 import UserProfile from "./components/pages/UserProfile";
 import MySales from "./components/pages/MySales";
 import MyProducts from "./components/pages/MyProducts";
@@ -16,6 +17,8 @@ const App = () => {
             <Route path="/products"> <MyProducts></MyProducts> </Route>
             <Route path="/sales"> <MySales></MySales> </Route>
             <Route path="/userprofile"> <UserProfile></UserProfile> </Route>
+            <Route path="/dashboard"> <DashBoard></DashBoard> </Route>
+
         </>
     )
 }
