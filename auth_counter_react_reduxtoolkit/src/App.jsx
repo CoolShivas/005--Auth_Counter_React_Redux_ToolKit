@@ -16,7 +16,7 @@ const App = () => {
         <>
 
             <Route path="/"> <Header></Header> </Route>
-            <Route path="/auth"> <Auth></Auth> </Route>
+            <Route path="/counter"> <Counter></Counter> </Route>
 
             {isAuthenticated && <>
                 <Route path="/counter"> <Counter></Counter> </Route>
@@ -25,6 +25,11 @@ const App = () => {
                 <Route path="/userprofile"> <UserProfile></UserProfile> </Route>
                 <Route path="/dashboard"> <DashBoard></DashBoard> </Route>
             </>}
+
+            <Auth></Auth>
+            <Counter></Counter>
+
+
 
         </>
     )

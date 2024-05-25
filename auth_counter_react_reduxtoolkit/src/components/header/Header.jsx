@@ -22,9 +22,9 @@ const Header = () => {
             {!isAuthenticated && <>
 
                 <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
-                <NavLink to="/auth">
+                {/* <NavLink to="/auth">
                     <button> Login </button>
-                </NavLink>
+                </NavLink> */}
             </>}
 
             {isAuthenticated && <>
@@ -35,39 +35,7 @@ const Header = () => {
                 <NavLink to="/auth">
                     <button onClick={handlerOnLogOut}> Logout </button>
                 </NavLink>
-
-                {/* <nav>
-                    <ul>
-                        <li>
-                            <NavLink to="/dashboard"><h1>Redux Auth</h1> </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink to="/products">My Products</NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink to="/sales">My Sales</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/userprofile"> User </NavLink>
-                        </li>
-
-                        <li>
-                            <NavLink to="/auth">
-                                <button onClick={handlerOnLogOut}> Logout </button>
-                            </NavLink>
-                        </li>
-                    </ul>
-                </nav> */}
-
             </>}
-
-
-
-
-
-
 
         </header>
     );
